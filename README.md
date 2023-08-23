@@ -6,7 +6,8 @@
 ```
 ALTER TABLE myTable ADD myColumn int;
 ALTER TABLE myTable ADD myColumn varchar(100);
-ALTER TABLE myTable ADD myColumn datetime;
+ALTER TABLE myTable ADD myColumn datetime NULL;
+ALTER TABLE myTable ADD myColumn int NOT NULL DEFAULT(1);
 ```
 **2. Get column name based on table name**
 ```
