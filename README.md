@@ -21,3 +21,14 @@ SELECT TABLE_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE COLUMN_NAME like '%myColumn%'
 ```
+**4. Search for store procedure that contains a specific text**
+```
+USE YourDatabaseName;
+
+DECLARE @SearchText NVARCHAR(MAX) = N'I Have a House';
+
+SELECT OBJECT_NAME(object_id) AS 'Stored Procedure Name'
+FROM sys.sql_modules
+WHERE OBJECTPROPERTY(object_id, 'IsProcedure') = 1
+    AND definition LIKE '%' + @SearchText + '%';
+```
